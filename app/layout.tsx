@@ -28,23 +28,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className={'flex flex-1 z-10'}>
-          <nav
-            className={
-              'flex flex-1 flex-row bg-white border-b-gray-300 border-b-2 h-[10vh] items-center justify-between px-8 '
-            }
-          >
-            <h2 className="font-bold text-xl text-black">Site de Saulo</h2>
-            <ul className=" flex flex-row gap-5">
-              <li className="text-xl font-medium text-black relative after:absolute after:content-[''] after:bg-primary after:transition-all after:bottom-0 after:left-0 after:w-[0px] after:h-[2px]  hover:after:w-full hover:cursor-pointer">
-                <Link href={'/signin'}>Entrar</Link>
-              </li>
-              <li className="text-xl font-medium text-black relative after:absolute after:content-[''] after:bg-primary after:transition-all after:bottom-0 after:left-0 after:w-[0px] after:h-[2px]  hover:after:w-full hover:cursor-pointer">
-                <Link href={'/signup'}>Cadastrar</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
         {children}
         <footer></footer>
       </body>

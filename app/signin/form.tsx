@@ -10,8 +10,8 @@ export const SignInForm = () => {
   }, [form])
 
   return (
-    <form className=" flex flex-col bg-white w-4/5 py-5 px-4 gap-4 rounded">
-      <h2 className="text-lg  text-center text-black mb-2 font-medium">
+    <form className=" flex flex-col bg-white w-4/5 pt-10 pb-10 px-4 gap-4 rounded border-[1px] border-gray-400">
+      <h2 className="text-xl text-center text-black mb-8 font-medium">
         Entre agora e não perca nada
       </h2>
       <div className="flex flex-col py-1 gap-1">
