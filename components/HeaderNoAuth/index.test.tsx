@@ -5,8 +5,8 @@ import { HeaederNoAuthComponent } from '@/components/HeaderNoAuth'
 
 describe('HeaederNoAuthComponent', () => {
   const mockLinks = [
-    { redirect: '/about', name: 'About' },
-    { redirect: '/contact', name: 'Contact' }
+    { redirect: '/signin', name: 'Entrar' },
+    { redirect: '/signup', name: 'Cadastrar' }
   ]
 
   it('renders with the correct structure', () => {
@@ -45,6 +45,5 @@ describe('HeaederNoAuthComponent', () => {
     // Verifica se a classe de hover foi aplicada no pai <li>
     const listItem = firstLink.closest('li')
     expect(listItem).toHaveClass('hover:after:w-full')
-    // teste
   })
 })
