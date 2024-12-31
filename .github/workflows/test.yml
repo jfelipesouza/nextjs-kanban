@@ -21,24 +21,7 @@ jobs:
 
       # Instalar dependências
       - name: Install dependencies
-        run: npm install
-
+        run: npm install 
       # Executar os testes
       - name: Run tests
         run: npx vitest --run
-
-  create-pull-request:
-    needs: test
-    if: success()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          branch: main
-          title: "Auto-merge from dev"
-          body: |
-            This PR was automatically created from dev after passing the tests.
