@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String
+  password  String
+  creatad   DateTime  @default(now())
+  updatedad DateTime  @updatedAt
+  Morador   Morador[]
+  acessos   Int[]
+}
+
+model Morador {
+  id           Int         @id @default(autoincrement())
+  user_fk      User        @relation(fields: [userId], references: [id])
+  userId       Int
+  name         String
+  bithday      String
+  Condominio   Condominio? @relation(fields: [condominioId], references: [id])
+  condominioId Int?
+  creatad      DateTime    @default(now())
+  updatedad    DateTime    @updatedAt
+}
+
+model Condominio {
+  id            Int       @id @default(autoincrement())
+  name          String
+  address       String
+  contact_email String
+  contact_phone String
+  moradores     Morador[]
+  creatad       DateTime  @default(now())
+  updatedad     DateTime  @updatedAt
+  Sala          Sala[]
+}
+
+model Sala {
+  id            Int        @id @default(autoincrement())
+  condominio_fk Condominio @relation(fields: [condominioId], references: [id])
+  condominioId  Int
+  tarefas       Tarefa[]
+  creatad       DateTime   @default(now())
+  updatedad     DateTime   @updatedAt
+}
+
+model Tarefa {
+  id           Int         @id @default(autoincrement())
+  title        String
+  description  String?
+  Sala         Sala?       @relation(fields: [salaId], references: [id])
+  salaId       Int?
+  formulario   Formulario? @relation(fields: [formularioId], references: [id])
+  formularioId Int?
+}
+
+model Formulario {
+  id        Int        @id @default(autoincrement())
+  Tarefa    Tarefa[]
+  perguntas Pergunta[]
+}
+
+model Pergunta {
+  id           Int         @id @default(autoincrement())
+  Formulario   Formulario? @relation(fields: [formularioId], references: [id])
+  formularioId Int?
+}
