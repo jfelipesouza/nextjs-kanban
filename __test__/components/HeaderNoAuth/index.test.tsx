@@ -45,5 +45,6 @@ describe('HeaederNoAuthComponent', () => {
     // Verifica se a classe de hover foi aplicada no pai <li>
     const listItem = firstLink.closest('li')
     expect(listItem).toHaveClass('hover:after:w-full')
+    // teste
   })
 })
