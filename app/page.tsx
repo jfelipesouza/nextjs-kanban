@@ -9,7 +9,9 @@ export default function Home() {
           { name: 'Cadastrar', redirect: '/signup' }
         ]}
       />
-      <div className="flex flex-1 flex-col px-8 py-5"></div>
+      <div className="flex flex-1 flex-col px-8 py-5">
+        <h1>Ola Mundo</h1>
+      </div>
     </>
   )
 }
