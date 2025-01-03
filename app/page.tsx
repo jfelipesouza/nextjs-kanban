@@ -1,17 +1,9 @@
-import { HeaederNoAuthComponent } from '@/components/HeaderNoAuth'
+import { SignInAndSignUpFormComponent } from '@/components/SignInAndSignUpForm'
 
 export default function Home() {
   return (
-    <>
-      <HeaederNoAuthComponent
-        links={[
-          { name: 'Entrar', redirect: '/signin' },
-          { name: 'Cadastrar', redirect: '/signup' }
-        ]}
-      />
-      <div className="flex flex-1 flex-col px-8 py-5">
-        <h1>Ola Mundo</h1>
-      </div>
-    </>
+    <div className="flex flex-1 flex-col relative items-center justify-center bg-primary min-h-[100vh] max-h-[100vh] px-8 py-5">
+      <SignInAndSignUpFormComponent />
+    </div>
   )
 }
